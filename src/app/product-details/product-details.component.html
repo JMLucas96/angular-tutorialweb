@@ -1,0 +1,10 @@
+<h2>Product Details</h2>
+<div *ngIf="product">
+  <h3>{{product.name}}</h3>
+  <h4>{{product.price | currency}}</h4>
+  <p *ngIf="product.description; else noDescription">{{product.description}}</p>
+  <ng-template #noDescription>
+    <p>No hi ha descripcio</p>
+  </ng-template>
+</div>
+<a [routerLink]="['/']">Tornar</a>
